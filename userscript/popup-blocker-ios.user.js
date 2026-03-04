@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Popup Blocker (Safari iOS simple)
 // @namespace    https://github.com/schomery/popup-blocker
-// @version      0.1.1
-// @description  Bloque les popups avec confirmation, autorise automatiquement le même origin, mémorise les refus par site, et ferme les popups refusées après un court délai.
+// @version      0.1.2
+// @description  Bloque les popups avec confirmation, autorise automatiquement le même origin, mémorise les refus par site, ferme les popups refusées après un court délai, sans bloquer les interactions de la page.
 // @match        *://*/*
 // @run-at       document-start
 // @grant        none
@@ -131,7 +131,6 @@
 
     if (blocked) {
       event.preventDefault();
-      event.stopImmediatePropagation();
     }
   }, true);
 
@@ -151,7 +150,6 @@
 
     if (blocked) {
       event.preventDefault();
-      event.stopImmediatePropagation();
     }
   }, true);
 })();
